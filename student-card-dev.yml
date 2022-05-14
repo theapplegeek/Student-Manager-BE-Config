@@ -1,8 +1,4 @@
 spring:
-  version: 2.6.6
-  application:
-    name: student-card
-    version: 1.0
   datasource:
     url: jdbc:postgresql://localhost:5432/student_card
     username: postgres

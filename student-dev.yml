@@ -1,8 +1,4 @@
 spring:
-  version: 2.6.6
-  application:
-    name: student
-    version: 1.0
   datasource:
     url: jdbc:postgresql://localhost:5433/student
     username: postgres
