@@ -15,6 +15,9 @@ spring:
           predicates:
             - Path=/api/v1/student_card/**
 
+server:
+  port: 8765
+
 logging:
   file.name: './logs/api-gateway.log'
   level:
