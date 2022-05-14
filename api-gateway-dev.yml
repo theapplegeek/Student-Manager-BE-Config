@@ -1,4 +1,7 @@
 spring:
+  config:
+    activate:
+      on-profile: dev
   cloud:
     gateway:
       enabled: true
@@ -14,9 +17,6 @@ spring:
           uri: lb://STUDENT-CARD
           predicates:
             - Path=/api/v1/student_card/**
-
-server:
-  port: 8765
 
 logging:
   file.name: './logs/api-gateway.log'
