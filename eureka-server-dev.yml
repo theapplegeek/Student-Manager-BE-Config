@@ -1,7 +1,3 @@
-spring:
-  config:
-    activate:
-      on-profile: dev
 eureka:
   client:
     fetch-registry: false
