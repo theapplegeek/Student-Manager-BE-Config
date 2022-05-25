@@ -1,8 +1,14 @@
 spring:
+  #==========================================================
+  #= DATABASE CONNECTION
+  #==========================================================
   datasource:
     url: jdbc:postgresql://student-db/student
     username: postgres
     password: Password01!
+  #==========================================================
+  #= SPRING DATA JPA
+  #==========================================================
   jpa:
     hibernate:
       ddl-auto: update
@@ -12,11 +18,17 @@ spring:
         format_sql: true
     show-sql: true
 
+#==========================================================
+#= SERVER
+#==========================================================
 server:
   port: 8080
   error:
     include-message: always
 
+#==========================================================
+#= LOGGING
+#==========================================================
 logging:
   file.name: './logs/Student.log'
   level:
@@ -27,6 +39,9 @@ logging:
     rolling policy:
       max-file-size: 100MB
 
+#==========================================================
+#= EUREKA CLIENT
+#==========================================================
 eureka:
   client:
     service-url:
