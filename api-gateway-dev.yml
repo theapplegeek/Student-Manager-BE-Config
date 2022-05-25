@@ -47,3 +47,30 @@ eureka:
     enabled: true
   instance:
     leaseRenewalIntervalInSeconds: 10
+
+#==============================================================
+#= SPRING ACTUATOR
+#==============================================================
+management:
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,customInfo
+
+#==============================================================
+#= SPRING ACTUATOR INFO
+#==============================================================
+info:
+  application:
+    name: ${spring.application.name}
+    version: ${spring.application.version}
+    spring-version: ${spring.version}
+  support:
+    author: "TheAppleGeeK"
+    mail: "weibin.xu.dev@gmail.com"
