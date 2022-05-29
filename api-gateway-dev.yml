@@ -12,13 +12,13 @@ spring:
         - id: studentService
           uri: lb://STUDENT
           predicates:
-            - Path=/api/v1/student/**
-#            - Path=/student/**
+            - Path=/api/v1/student/**,
+                   /student/**
         - id: studentCardService
           uri: lb://STUDENT-CARD
           predicates:
-            - Path=/api/v1/student_card/**
-#            - Path=/student_card/**
+            - Path=/api/v1/student_card/**, 
+                   /student_card/**
 
 #==========================================================
 #= SERVER
