@@ -17,6 +17,14 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+  #==============================================================
+  #= RABBITMQ
+  #==============================================================
+  rabbitmq:
+    host: http://rabbitmq/
+    port: 5672
+    username: rabbitmq
+    password: admin
 
 #==========================================================
 #= SERVER
