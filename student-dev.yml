@@ -17,14 +17,18 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
-  #==============================================================
-  #= RABBITMQ
-  #==============================================================
-  rabbitmq:
-    host: http://rabbitmq/
-    port: 5672
-    username: rabbitmq
-    password: admin
+  cloud:
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+      env:
+        enabled: true
+  kafka:
+    bootstrap-servers:
+      - ${KAFKA_ADDR}:${spring.kafka.url}
+    client-id: ${spring.application.name}:8080(seq)
+    url: http://kafka:9092
 
 #==========================================================
 #= SERVER
