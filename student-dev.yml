@@ -69,7 +69,7 @@ management:
     web:
       base-path: /student/actuator
       exposure:
-        include: health,info,metrics
+        include: health,info,metrics,refresh
 
 #==============================================================
 #= SPRING ACTUATOR INFO

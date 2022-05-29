@@ -13,12 +13,12 @@ spring:
           uri: lb://STUDENT
           predicates:
             - Path=/api/v1/student/**
-            - Path=/student/**
+#            - Path=/student/**
         - id: studentCardService
           uri: lb://STUDENT-CARD
           predicates:
             - Path=/api/v1/student_card/**
-            - Path=/student_card/**
+#            - Path=/student_card/**
 
 #==========================================================
 #= SERVER
@@ -66,7 +66,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics
+        include: health,info,metrics,refresh
 
 #==============================================================
 #= SPRING ACTUATOR INFO
