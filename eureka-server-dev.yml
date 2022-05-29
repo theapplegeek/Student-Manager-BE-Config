@@ -21,9 +21,6 @@ management:
   info:
     env:
       enabled: true
-    git:
-      enabled: true
-      mode: full
   endpoint:
     health:
       show-details: always
