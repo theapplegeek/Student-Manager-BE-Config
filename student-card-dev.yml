@@ -59,13 +59,17 @@ management:
   info:
     env:
       enabled: true
+    git:
+      enabled: true
+      mode: full
   endpoint:
     health:
       show-details: always
   endpoints:
     web:
+      base-path: /student_card/actuator
       exposure:
-        include: health,info,metrics,customInfo
+        include: health,info,metrics
 
 #==============================================================
 #= SPRING ACTUATOR INFO
