@@ -17,6 +17,9 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+  #==========================================================
+  #= SPRING CLOUD BUS
+  #==========================================================
   cloud:
     bus:
       enabled: true
@@ -24,6 +27,9 @@ spring:
         enabled: true
       env:
         enabled: true
+  #==========================================================
+  #= APACHE KAFKA
+  #==========================================================
   kafka:
     bootstrap-servers:
       - ${KAFKA_ADDR}:${spring.kafka.url}
