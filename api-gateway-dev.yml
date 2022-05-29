@@ -54,9 +54,9 @@ eureka:
 #= SPRING ACTUATOR
 #==============================================================
 management:
-  info:
-    env:
-      enabled: true
+#  info:
+#    env:
+#      enabled: true
   endpoint:
     health:
       show-details: always
@@ -65,7 +65,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,refresh,gateway
+        include: health,gateway,info,metrics,refresh
 
 #==============================================================
 #= SPRING ACTUATOR INFO
