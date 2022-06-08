@@ -20,6 +20,8 @@ spring:
   #==========================================================
   #= SPRING CLOUD BUS
   #==========================================================
+  config:
+    use-legacy-processing: false
   cloud:
     bus:
       enabled: true
