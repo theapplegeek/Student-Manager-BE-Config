@@ -18,6 +18,9 @@ eureka:
 #= SPRING ACTUATOR
 #==============================================================
 management:
+  info:
+    env:
+      enabled: true
   endpoint:
     health:
       show-details: always

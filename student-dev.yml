@@ -32,9 +32,8 @@ spring:
   #==========================================================
   kafka:
     bootstrap-servers:
-      - ${KAFKA_ADDR}:${spring.kafka.url}
-    client-id: ${spring.application.name}:8080(seq)
-    url: http://kafka:9092
+      - ${KAFKA_ADDR:http://localhost:29092}
+    client-id: ${spring.application.name}:${spring.profiles.active}:8080(seq)
 
 #==========================================================
 #= SERVER
@@ -74,6 +73,9 @@ eureka:
 #= SPRING ACTUATOR
 #==============================================================
 management:
+  info:
+    env:
+      enabled: true
   endpoint:
     health:
       show-details: always
@@ -81,7 +83,7 @@ management:
     web:
       base-path: /student/actuator
       exposure:
-        include: health,info,metrics,refresh,bus-refresh
+        include: health,info,metrics,refresh,bus-refresh,bus-env
 
 #==============================================================
 #= SPRING ACTUATOR INFO
