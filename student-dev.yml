@@ -32,7 +32,7 @@ spring:
   #==========================================================
   kafka:
     bootstrap-servers:
-      - ${KAFKA_ADDR:http://localhost:29092}
+      - ${KAFKA_ADDR:http://kafka:29092}
     client-id: ${spring.application.name}:${spring.profiles.active}:8080(seq)
 
 #==========================================================
