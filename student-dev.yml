@@ -20,8 +20,6 @@ spring:
   #==========================================================
   #= SPRING CLOUD BUS
   #==========================================================
-  config:
-    use-legacy-processing: false
   cloud:
     bus:
       enabled: true
@@ -98,4 +96,3 @@ info:
   support:
     author: "TheAppleGeeK"
     mail: "weibin.xu.dev@gmail.com"
-    test: "test"
