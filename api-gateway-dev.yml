@@ -1,5 +1,24 @@
 spring:
   #==========================================================
+  #= SPRING CLOUD API GATEWAY
+  #==========================================================  cloud:
+  gateway:
+    enabled: true
+    httpclient:
+      connect-timeout: 50000
+      response-timeout: 50s
+    routes:
+      - id: studentService
+        uri: lb://STUDENT
+        predicates:
+          - Path=/api/v1/student/**,
+                 /student/**
+      - id: studentCardService
+        uri: lb://STUDENT-CARD
+        predicates:
+          - Path=/api/v1/student_card/**, 
+                 /student_card/**
+  #==========================================================
   #= SPRING CLOUD BUS
   #==========================================================
   cloud:
@@ -23,34 +42,14 @@ spring:
     base-url: http://zipkin:9411/
     sender:
       type: web
+    message-timeout: 5
   #==========================================================
   #= SPRING CLOUD SLEUTH
   #==========================================================
   sleuth:
     sampler:
       probability: 1.0
-  #==========================================================
-  #= SPRING CLOUD API GATEWAY
-  #==========================================================  cloud:
-  gateway:
-    enabled: true
-    httpclient:
-      connect-timeout: 50000
-      response-timeout: 50s
-    discovery:
-      locator:
-        enabled: true
-    routes:
-      - id: studentService
-        uri: lb://STUDENT
-        predicates:
-          - Path=/api/v1/student/**,
-            /student/**
-      - id: studentCardService
-        uri: lb://STUDENT-CARD
-        predicates:
-          - Path=/api/v1/student_card/**,
-            /student_card/**
+    trace-id128: false
 
 #==========================================================
 #= SERVER

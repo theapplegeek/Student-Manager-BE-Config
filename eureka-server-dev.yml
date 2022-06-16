@@ -16,21 +16,6 @@ spring:
     bootstrap-servers:
       - ${KAFKA_ADDR:http://kafka:29092}
     client-id: ${spring.application.name}:${spring.profiles.active}:8080(seq)
-  #==========================================================
-  #= SPRING CLOUD ZIPKIN
-  #==========================================================
-  zipkin:
-    base-url: http://zipkin:9411/
-    sender:
-      type: web
-    message-timeout: 5
-  #==========================================================
-  #= SPRING CLOUD SLEUTH
-  #==========================================================
-  sleuth:
-    sampler:
-      probability: 1.0
-    trace-id128: false
 
 #==========================================================
 #= SERVER
