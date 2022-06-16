@@ -1,24 +1,48 @@
-#==========================================================
-#= SPRING CLOUD API GATEWAY
-#==========================================================
 spring:
+  #==========================================================
+  #= SPRING CLOUD API GATEWAY
+  #==========================================================  cloud:
+  gateway:
+    enabled: true
+    httpclient:
+      connect-timeout: 50000
+      response-timeout: 50s
+    routes:
+      - id: studentService
+        uri: lb://STUDENT
+        predicates:
+          - Path=/api/v1/student/**,
+                 /student/**
+      - id: studentCardService
+        uri: lb://STUDENT-CARD
+        predicates:
+          - Path=/api/v1/student_card/**, 
+                 /student_card/**
+  #==========================================================
+  #= SPRING CLOUD BUS
+  #==========================================================
   cloud:
-    gateway:
+    bus:
       enabled: true
-      httpclient:
-        connect-timeout: 50000
-        response-timeout: 50s
-      routes:
-        - id: studentService
-          uri: lb://STUDENT
-          predicates:
-            - Path=/api/v1/student/**,
-                   /student/**
-        - id: studentCardService
-          uri: lb://STUDENT-CARD
-          predicates:
-            - Path=/api/v1/student_card/**, 
-                   /student_card/**
+      refresh:
+        enabled: true
+      env:
+        enabled: true
+  #==========================================================
+  #= APACHE KAFKA
+  #==========================================================
+  kafka:
+    bootstrap-servers:
+      - ${KAFKA_ADDR:http://kafka:29092}
+    client-id: ${spring.application.name}:${spring.profiles.active}:8080(seq)
+  #==========================================================
+  #= SPRING CLOUD ZIPKIN
+  #==========================================================
+  zipkin:
+    base-url: http://zipkin:9411/
+    sender:
+      type: kafka
+    message-timeout: 5
 
 #==========================================================
 #= SERVER
@@ -38,7 +62,7 @@ logging:
       max-file-size: 100MB
 
 #==========================================================
-#= EURELA CLIENT
+#= EUREKA CLIENT
 #==========================================================
 eureka:
   client:
@@ -63,7 +87,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics
+        include: health,info,metrics,refresh,bus-refresh,bus-env
 
 #==============================================================
 #= SPRING ACTUATOR INFO
