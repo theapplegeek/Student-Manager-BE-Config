@@ -1,27 +1,27 @@
 spring:
-  #==========================================================
-  #= SPRING CLOUD API GATEWAY
-  #==========================================================  cloud:
-  gateway:
-    enabled: true
-    httpclient:
-      connect-timeout: 50000
-      response-timeout: 50s
-    routes:
-      - id: studentService
-        uri: lb://STUDENT
-        predicates:
-          - Path=/api/v1/student/**,
-                 /student/**
-      - id: studentCardService
-        uri: lb://STUDENT-CARD
-        predicates:
-          - Path=/api/v1/student_card/**, 
-                 /student_card/**
-  #==========================================================
-  #= SPRING CLOUD BUS
-  #==========================================================
   cloud:
+    #==========================================================
+    #= SPRING CLOUD API GATEWAY
+    #==========================================================
+    gateway:
+      enabled: true
+      httpclient:
+        connect-timeout: 50000
+        response-timeout: 50s
+      routes:
+        - id: studentService
+          uri: lb://STUDENT
+          predicates:
+            - Path=/api/v1/student/**,
+                   /student/**
+        - id: studentCardService
+          uri: lb://STUDENT-CARD
+          predicates:
+            - Path=/api/v1/student_card/**, 
+                   /student_card/**
+    #==========================================================
+    #= SPRING CLOUD BUS
+    #==========================================================
     bus:
       enabled: true
       refresh:
