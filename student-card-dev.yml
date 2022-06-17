@@ -40,7 +40,7 @@ spring:
   zipkin:
     base-url: http://zipkin:9411/
     sender:
-      type: web
+      type: kafka
     message-timeout: 5
   #==========================================================
   #= SPRING CLOUD SLEUTH
