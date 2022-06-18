@@ -24,6 +24,18 @@ server:
   port: 8761
 
 #==========================================================
+#= LOGGING
+#==========================================================
+logging:
+  file.name: './logs/eureka-server/eureka-server.log'
+  pattern.file: "%d{ dd-MM-yyyy HH:mm:ss } %-5level %logger{36} - %msg%n"
+  level:
+    org.springframework.cloud: debug
+  logback:
+    rolling policy:
+      max-file-size: 100MB
+
+#==========================================================
 #= EUREKA SERVER
 #==========================================================
 eureka:

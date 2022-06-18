@@ -61,7 +61,8 @@ server:
 #= LOGGING
 #==========================================================
 logging:
-  file.name: './logs/api-gateway.log'
+  file.name: './logs/api-gateway/api-gateway.log'
+  pattern.file: "%d{ dd-MM-yyyy HH:mm:ss } %-5level %logger{36} - %msg%n"
   level:
     org.springframework.cloud: debug
   logback:
