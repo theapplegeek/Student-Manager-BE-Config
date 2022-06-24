@@ -48,7 +48,7 @@ spring:
   zipkin:
     base-url: http://zipkin:9411/
     sender:
-      type: rabbitmq
+      type: rabbit
     message-timeout: 5
   #==========================================================
   #= SPRING CLOUD SLEUTH
