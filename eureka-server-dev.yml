@@ -12,10 +12,18 @@ spring:
   #==========================================================
   #= APACHE KAFKA
   #==========================================================
-  kafka:
-    bootstrap-servers:
-      - ${KAFKA_ADDR:http://kafka:29092}
-    client-id: ${spring.application.name}:${spring.profiles.active}:8080(seq)
+#  kafka:
+#    bootstrap-servers:
+#      - ${KAFKA_ADDR:http://kafka:29092}
+#    client-id: ${spring.application.name}:${spring.profiles.active}:8080(seq)
+  #==========================================================
+  #= RABBITMQ
+  #==========================================================
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: rabbitmq
+    password: admin
 
 #==========================================================
 #= SERVER
