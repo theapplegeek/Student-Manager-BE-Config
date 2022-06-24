@@ -116,3 +116,7 @@ info:
   support:
     author: "TheAppleGeeK"
     mail: "weibin.xu.dev@gmail.com"
+  refresh-config:
+    method: POST
+    url: /actuator/busrefresh
+    type: rabbitmq
