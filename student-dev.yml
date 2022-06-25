@@ -4,8 +4,8 @@ spring:
   #==========================================================
   datasource:
     url: jdbc:postgresql://student-db:5432/student
-    username:
-    password:
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   #==========================================================
   #= SPRING DATA JPA
   #==========================================================
@@ -40,8 +40,8 @@ spring:
   rabbitmq:
     host: rabbitmq
     port: 5672
-    username:
-    password:
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
   #==========================================================
   #= SPRING CLOUD ZIPKIN
   #==========================================================
