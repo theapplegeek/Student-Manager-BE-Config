@@ -4,8 +4,8 @@ spring:
   #==========================================================
   datasource:
     url: jdbc:postgresql://student-card-db/student_card
-    username: postgres
-    password: Password01!
+    username:
+    password:
   #==========================================================
   #= SPRING DATA JPA
   #==========================================================
@@ -40,8 +40,8 @@ spring:
   rabbitmq:
     host: rabbitmq
     port: 5672
-    username: rabbitmq
-    password: admin
+    username:
+    password:
   #==========================================================
   #= SPRING CLOUD ZIPKIN
   #==========================================================
@@ -79,19 +79,6 @@ logging:
   logback:
     rolling policy:
       max-file-size: 100MB
-
-#==========================================================
-#= EUREKA CLIENT
-#==========================================================
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka-server:8761/eureka
-    fetch-registry: true
-    register-with-eureka: true
-    enabled: true
-  instance:
-    leaseRenewalIntervalInSeconds: 10
 
 #==============================================================
 #= SPRING ACTUATOR
