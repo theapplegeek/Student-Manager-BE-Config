@@ -3,7 +3,7 @@ spring:
   #= DATABASE CONNECTION
   #==========================================================
   datasource:
-    url: jdbc:postgresql://student-card-db/student_card
+    url: jdbc:postgresql://student-card-db:5432/student_card
     username:
     password:
   #==========================================================
