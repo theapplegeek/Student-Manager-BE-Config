@@ -77,7 +77,7 @@ server:
 #= LOGGING
 #==========================================================
 logging:
-  file.name: './logs/enrolment/enrolment.log'
+  file.name: './logs/teacher/teacher.log'
   pattern.file: "%d{ dd-MM-yyyy HH:mm:ss } %-5level %logger{36} - %msg%n"
   level:
     web: info
